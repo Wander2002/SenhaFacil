@@ -48,7 +48,7 @@ Bibliotecas:
 - Wifi Iot: Biblioteca para acessar redes Wi-Fi disponíveis no dispositivo e realizar conexões.
 - Flutter: A biblioteca principal do framework Flutter, que contém as ferramentas essenciais para o desenvolvimento de interfaces móveis.
 
-# 🖥️ Modelagem
+## 🖥️ Modelagem
 
 ## Classes principais:
 - LoginScreen
@@ -163,7 +163,7 @@ class _InicioTelaState extends State<InicioTela> {
   }
 }
 ```
-📂 Organização do Repositório  
+## 📂 Organização do Repositório  
 lib/  
 ├── main.dart  
 ├── _comum/  
@@ -178,3 +178,48 @@ lib/
 ├── services/  
 │   └── autentication.dart  
 
+## 🛠️ Processo de Desenvolvimento
+
+### Uso de TDD (Test-Driven Development):
+
+- Foi criado testes unitários para cada funcionalidade implementada do aplicativo.
+
+```dart
+test('Verifica se o Wi-Fi está habilitado', () async {
+  // Teste se o método isEnabled() retorna o valor esperado
+  final isEnabled = await mockPlugin.isEnabled();
+  expect(isEnabled, true); // Ou o valor esperado
+});
+```
+
+Este código realiza um teste unitário para verificar se o método isEnabled() de um mock de plugin Wi-Fi retorna true, ou seja, se o Wi-Fi está habilitado. Se o valor retornado for diferente de true, o teste falha. O teste usa o framework de testes do Flutter e a função expect para validar o resultado esperado.
+
+```dart
+testWidgets('Testa o fluxo de login com falha', (WidgetTester tester) async {
+  // Criar um mock do serviço de autenticação
+  final mockAutenticacao = MockAutenticacaoServico();
+
+  // Simula o comportamento do login com falha
+  when(mockAutenticacao.logarUsuario(
+    email: "test@example.com", senha: "senhaErrada"))
+  .thenAnswer((_) async => "Credenciais inválidas");
+
+  // Carregar a tela de login
+  await tester.pumpWidget(MaterialApp(
+    home: LoginScreen(),
+  ));
+});
+```
+Este código testa o fluxo de login com falha. Ele cria um mock do serviço de autenticação e simula uma tentativa de login com e-mail e senha errados, retornando uma mensagem de "Credenciais inválidas". Em seguida, carrega a tela de login e prepara o ambiente para testar esse comportamento na interface, verificando se a falha no login é tratada corretamente.
+
+## 📊 Diagrama de Classes
+![Diagrama de Classes](diagrama/diagrama_de_classe.png)
+
+## 📊 Diagrama de Atividades
+![Diagrama de Atividades](diagrama/diagrama_de_atividades.png)
+
+## 🚀 Trabalhos Futuros
+- Melhoria da Experiência do Usuário (UX)​
+- As senhas das redes Wi-Fi devem ser armazenadas de forma segura no Firestore, utilizando técnicas de criptografia.​
+- Termos de Responsabilidade ao Cadastrar Redes Wi-Fi​
+- Integração com Outras Plataformas
