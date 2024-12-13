@@ -45,7 +45,6 @@ Bibliotecas:
 - Firebase Core: Biblioteca que inicializa o Firebase no aplicativo.
 - Cloud Firestore: Biblioteca que permite interação com o Firestore para ler e gravar dados em tempo real.
 - Wifi Iot: Biblioteca para acessar redes Wi-Fi disponíveis no dispositivo e realizar conexões.
-- Flutter: A biblioteca principal do framework Flutter, que contém as ferramentas essenciais para o desenvolvimento de interfaces móveis.
 
 ## 🖥️ Modelagem
 
