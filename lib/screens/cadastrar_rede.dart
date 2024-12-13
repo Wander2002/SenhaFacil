@@ -53,6 +53,7 @@ class _CadastrarRedeState extends State<CadastrarRede> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Cadastrar Rede"),
+        backgroundColor: Colors.green, // Alterado para verde
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -85,6 +86,9 @@ class _CadastrarRedeState extends State<CadastrarRede> {
               ),
               const SizedBox(height: 16.0),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green, // Atribuindo a cor diretamente
+                ),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     salvarRede();
