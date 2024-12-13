@@ -10,7 +10,6 @@ Facilitar o acesso à internet, permitindo que usuários se conectem a redes Wi-
 - O sistema deve permitir que o usuário cadastre uma rede Wi-Fi no Firestore, informando o nome da rede e sua senha.
 - O sistema deve verificar se a rede Wi-Fi selecionada já está cadastrada no Firestore antes de permitir o cadastro.
 - O sistema deve permitir que o usuário deslogue da aplicação.
-- O sistema deve validar se a conexão foi bem-sucedida.
 
 ## 🛠️ Requisitos Não Funcionais:
 
